@@ -16,7 +16,13 @@ document.addEventListener("DOMContentLoaded", async () => {
   toggle.checked = data[STORAGE_ENABLED_KEY] !== false;
 
   toggle.addEventListener("change", async () => {
-    await chrome.storage.local.set({ [STORAGE_ENABLED_KEY]: toggle.checked });
+    const on = toggle.checked;
+    await chrome.storage.local.set({ [STORAGE_ENABLED_KEY]: on });
+    try {
+      await chrome.runtime.sendMessage({ type: "mediaKeysEnabledSync", enabled: on });
+    } catch {
+      /* SW 未載入時可能失敗；storage.onChanged 仍會同步 */
+    }
   });
 
   document.getElementById("open-help").addEventListener("click", () => {

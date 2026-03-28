@@ -1,9 +1,23 @@
 const STORAGE_ENABLED_KEY = "mediaKeysEnabled";
 
-async function isMediaKeysEnabled() {
+/** 與 chrome.storage.local 同步；popup 會送訊息以立即更新，避免 SW 剛醒來時讀取延遲 */
+let mediaKeysEnabledCache = true;
+let mediaKeysCacheInitialized = false;
+
+function applyMediaKeysEnabledFromStorageValue(value) {
+  if (value === undefined) mediaKeysEnabledCache = true;
+  else mediaKeysEnabledCache = Boolean(value);
+  mediaKeysCacheInitialized = true;
+}
+
+async function syncMediaKeysEnabledFromStorage() {
   const data = await chrome.storage.local.get(STORAGE_ENABLED_KEY);
-  if (data[STORAGE_ENABLED_KEY] === undefined) return true;
-  return Boolean(data[STORAGE_ENABLED_KEY]);
+  applyMediaKeysEnabledFromStorageValue(data[STORAGE_ENABLED_KEY]);
+}
+
+async function isMediaKeysEnabled() {
+  if (!mediaKeysCacheInitialized) await syncMediaKeysEnabledFromStorage();
+  return mediaKeysEnabledCache;
 }
 
 async function refreshActionBadge() {
@@ -36,11 +50,22 @@ chrome.runtime.onInstalled.addListener((details) => {
 
 chrome.storage.onChanged.addListener((changes, area) => {
   if (area === "local" && changes[STORAGE_ENABLED_KEY]) {
+    applyMediaKeysEnabledFromStorageValue(changes[STORAGE_ENABLED_KEY].newValue);
     void refreshActionBadge().catch(() => {});
   }
 });
 
-void refreshActionBadge().catch(() => {});
+chrome.runtime.onMessage.addListener((msg) => {
+  if (msg?.type === "mediaKeysEnabledSync" && typeof msg.enabled === "boolean") {
+    mediaKeysEnabledCache = msg.enabled;
+    mediaKeysCacheInitialized = true;
+    void refreshActionBadge().catch(() => {});
+  }
+});
+
+void syncMediaKeysEnabledFromStorage()
+  .then(() => refreshActionBadge())
+  .catch(() => {});
 
 const YOUTUBE_URL_PATTERNS = [
   "https://www.youtube.com/*",
