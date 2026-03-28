@@ -115,7 +115,12 @@
 
 本擴充**不蒐集、不上傳**個人資料；未使用分析或遠端程式碼。僅於本機 `storage` 儲存開關狀態。
 
-**上架 Chrome Web Store 時**，後台須填寫隱私實踐；若商店要求公開隱私權政策 URL，可另建 `privacy-policy.html` 並託管於 [GitHub Pages](https://pages.github.com/) 等（比照其他 [B.M] 專案）。
+**上架 Chrome Web Store 時**，後台須填寫隱私實踐。本儲存庫已含根目錄 [`privacy-policy.html`](privacy-policy.html)。
+
+- **建議填寫的網址**（須先開啟 GitHub Pages）：儲存庫 **Settings → Pages**，Source 選 **Deploy from a branch**，Branch 選 **`main`**、資料夾 **`/ (root)`**，儲存後約數分鐘生效，再使用：  
+  **https://boringman314.github.io/bm-youtube-keyboard-media-keys/privacy-policy.html**
+- 若暫未啟用 Pages，可先用（審核是否接受以 Google 為準）：  
+  **https://github.com/BoringMan314/bm-youtube-keyboard-media-keys/blob/main/privacy-policy.html**
 
 ---
 
