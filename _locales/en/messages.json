@@ -4,7 +4,7 @@
     "description": "Extension name (English)"
   },
   "extDescription": {
-    "message": "Maps Play-Pause, Previous, and Next media keys to YouTube Shorts, long-form watch/live, and YouTube Music; toggle from the toolbar popup. All three commands use global: true in the manifest (default Global); if chrome://extensions/shortcuts shows “In Chrome” or keys are unset, switch to Global and bind the media keys.",
+    "message": "Maps media keys to YouTube Shorts, videos, and Music. Toolbar on/off. Set shortcuts to Global at chrome://extensions/shortcuts.",
     "description": "Extension description (English)"
   },
   "cmdPlayPauseDescription": {

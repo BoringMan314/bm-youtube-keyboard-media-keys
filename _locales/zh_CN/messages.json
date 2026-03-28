@@ -4,7 +4,7 @@
     "description": "扩展名称（简体中文）"
   },
   "extDescription": {
-    "message": "将键盘播放/暂停、上一首、下一首媒体键映射到 YouTube Shorts、长视频与 YouTube Music；可在弹出面板开关。三个命令在 manifest 已设 global: true（默认全局）；若 chrome://extensions/shortcuts 仍显示“仅限 Chrome”或未绑定键，请改为“全局”并完成绑定。",
+    "message": "将播放/暂停、上一首、下一首映射至 YouTube Shorts、长视频与 YouTube Music；工具栏可开关。请在 chrome://extensions/shortcuts 将快捷键设为全局。",
     "description": "扩展简介（简体中文）"
   },
   "cmdPlayPauseDescription": {

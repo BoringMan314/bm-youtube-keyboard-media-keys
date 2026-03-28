@@ -4,7 +4,7 @@
     "description": "擴充功能名稱（繁體中文）"
   },
   "extDescription": {
-    "message": "將鍵盤播放／暫停、上一首、下一首媒體鍵對應到 YouTube Shorts、長影片與 YouTube Music；可於彈出面板開關。三個指令於 manifest 已設 global: true（預設全域）；若 chrome://extensions/shortcuts 仍顯示「僅限 Chrome」或未綁定鍵，請改為「全域」並完成綁定。",
+    "message": "將播放／暫停、上一首、下一首對應至 YouTube Shorts、長影片與 YouTube Music；工具列可開關。請至 chrome://extensions/shortcuts 確認快捷鍵為全域。",
     "description": "擴充功能簡介（繁體中文）"
   },
   "cmdPlayPauseDescription": {

@@ -4,7 +4,7 @@
     "description": "拡張機能名（日本語）"
   },
   "extDescription": {
-    "message": "キーボードの再生・一時停止／前の曲／次の曲メディアキーを YouTube Shorts、長尺動画、YouTube Music に割り当てます。ツールバーのポップアップでオン・オフ可能。3 コマンドは manifest で global: true（既定はグローバル）。chrome://extensions/shortcuts が「Chrome 内のみ」や未設定のときは「グローバル」にし、メディアキーを割り当ててください。",
+    "message": "再生・一時停止／前の曲／次の曲を YouTube Shorts・長尺・YouTube Music に割り当て。ツールバーでオン・オフ。chrome://extensions/shortcuts でグローバルに。",
     "description": "拡張機能の説明（日本語）"
   },
   "cmdPlayPauseDescription": {
