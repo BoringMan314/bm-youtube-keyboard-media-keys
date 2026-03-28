@@ -1,0 +1,126 @@
+{
+  "extName": {
+    "message": "[B.M] YouTube — Keyboard media keys",
+    "description": "Extension name (English)"
+  },
+  "extDescription": {
+    "message": "Maps Play-Pause, Previous, and Next media keys to YouTube Shorts, long-form watch/live, and YouTube Music; toggle from the toolbar popup. All three commands use global: true in the manifest (default Global); if chrome://extensions/shortcuts shows “In Chrome” or keys are unset, switch to Global and bind the media keys.",
+    "description": "Extension description (English)"
+  },
+  "cmdPlayPauseDescription": {
+    "message": "Play / pause",
+    "description": "Command: play pause"
+  },
+  "cmdPrevDescription": {
+    "message": "Previous",
+    "description": "Command: previous track"
+  },
+  "cmdNextDescription": {
+    "message": "Next",
+    "description": "Command: next track"
+  },
+  "actionTitleEnabled": {
+    "message": "[B.M] YouTube media keys: On (click to turn off)",
+    "description": "Action tooltip when enabled"
+  },
+  "actionTitleDisabled": {
+    "message": "[B.M] YouTube media keys: Off",
+    "description": "Action tooltip when disabled"
+  },
+  "popupHeading": {
+    "message": "YouTube media keys",
+    "description": "Popup heading"
+  },
+  "popupEnableLabel": {
+    "message": "Enable media key mapping",
+    "description": "Popup toggle label"
+  },
+  "popupOpenHelp": {
+    "message": "Help & shortcut settings",
+    "description": "Popup button"
+  },
+  "popupHintDisabled": {
+    "message": "When off, play-pause, previous, and next are not handled by this extension.",
+    "description": "Popup footer hint"
+  },
+  "optionsTitle": {
+    "message": "[B.M] YouTube media keys — Help",
+    "description": "Options page title"
+  },
+  "optionsH1": {
+    "message": "[B.M] YouTube — Keyboard media keys",
+    "description": "Options page H1"
+  },
+  "optionsIntro": {
+    "message": "Click the toolbar icon to enable or disable media key capture; when disabled the icon shows a red “×”. Open this page or use the popup button for help and shortcuts.",
+    "description": "Options intro"
+  },
+  "optionsWarnStrong": {
+    "message": "Keys do nothing when Chrome is in the background:",
+    "description": "Options warning lead"
+  },
+  "optionsWarnRest": {
+    "message": "All three commands already set global: true in the manifest (intended as Global). Usually shortcuts already show Global; if any still say “In Chrome” or are unset, set them to Global and press the media key to bind.",
+    "description": "Options warning body"
+  },
+  "optionsH2Setup": {
+    "message": "Shortcuts & scope (verify)",
+    "description": "Options H2"
+  },
+  "optionsSetup1": {
+    "message": "Open chrome://extensions/shortcuts",
+    "description": "Setup step 1"
+  },
+  "optionsSetup2": {
+    "message": "Confirm all three commands under this extension are Global; no change if already correct.",
+    "description": "Setup step 2"
+  },
+  "optionsSetup3": {
+    "message": "If a shortcut is unset, click the field and press the media key to bind it.",
+    "description": "Setup step 3"
+  },
+  "optionsH2Nav": {
+    "message": "Previous / Next",
+    "description": "Options H2 navigation"
+  },
+  "optionsNavP1": {
+    "message": "If the active tab is Shorts, watch/live, or YouTube Music, keys target that tab. Otherwise the last-used YouTube Music tab is preferred (audible first, then most recent). With no Music tab, nothing happens.",
+    "description": "Options nav paragraph"
+  },
+  "optionsNavLi1": {
+    "message": "Shorts: previous/next short. Does not touch background Shorts while a long video tab is active.",
+    "description": "Options list item"
+  },
+  "optionsNavLi2": {
+    "message": "Long video (/watch, /live): Previous uses browser back (history.back()); Next sends Shift+N.",
+    "description": "Options list item"
+  },
+  "optionsNavLi3": {
+    "message": "YouTube Music: clicks the bar buttons, else Shift+N/P. On an unplayed playlist page, starts from the header or first row.",
+    "description": "Options list item"
+  },
+  "optionsH2Play": {
+    "message": "Play / Pause",
+    "description": "Options H2 playback"
+  },
+  "optionsPlayP1": {
+    "message": "Targets the active tab when it is watch/Shorts/Music; otherwise prefers the last YouTube Music tab, then other YouTube tabs by audible/recency.",
+    "description": "Options play paragraph"
+  },
+  "optionsH2Trouble": {
+    "message": "If it still fails",
+    "description": "Options H2 troubleshoot"
+  },
+  "optionsTrouble1": {
+    "message": "Disable other extensions that bind the same media keys.",
+    "description": "Troubleshoot 1"
+  },
+  "optionsTrouble2": {
+    "message": "Update Chrome to the latest stable version.",
+    "description": "Troubleshoot 2"
+  },
+  "optionsTrouble3": {
+    "message": "At chrome://flags, keep “Hardware Media Key Handling” enabled and restart.",
+    "description": "Troubleshoot 3"
+  }
+}
