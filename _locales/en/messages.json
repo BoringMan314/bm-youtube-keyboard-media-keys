@@ -4,7 +4,7 @@
     "description": "Extension name (English)"
   },
   "extDescription": {
-    "message": "Maps media keys to YouTube Shorts, videos, and Music. Toolbar on/off. Set shortcuts to Global at chrome://extensions/shortcuts.",
+    "message": "Maps Play/Pause, Prev, Next to YouTube long video, Shorts, and Music. Toolbar toggle. Set Global at chrome://extensions/shortcuts.",
     "description": "Extension description (English)"
   },
   "cmdPlayPauseDescription": {

@@ -4,7 +4,7 @@
     "description": "擴充功能名稱（繁體中文）"
   },
   "extDescription": {
-    "message": "將播放／暫停、上一首、下一首對應至 YouTube Shorts、長影片與 YouTube Music；工具列可開關。請至 chrome://extensions/shortcuts 確認快捷鍵為全域。",
+    "message": "將鍵盤上的播放／暫停、上一首、下一首對應至 YouTube 長影片、Shorts 與 YouTube Music；工具列可開關。請至 chrome://extensions/shortcuts 確認快捷鍵為全域。",
     "description": "擴充功能簡介（繁體中文）"
   },
   "cmdPlayPauseDescription": {

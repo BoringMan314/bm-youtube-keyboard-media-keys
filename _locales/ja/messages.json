@@ -4,7 +4,7 @@
     "description": "拡張機能名（日本語）"
   },
   "extDescription": {
-    "message": "再生・一時停止／前の曲／次の曲を YouTube Shorts・長尺・YouTube Music に割り当て。ツールバーでオン・オフ。chrome://extensions/shortcuts でグローバルに。",
+    "message": "キーボードの再生／一時停止・前の曲・次の曲を、YouTube の長尺動画・Shorts・YouTube Music に割り当て。ツールバーでオン・オフ。chrome://extensions/shortcuts でショートカットをグローバルに。",
     "description": "拡張機能の説明（日本語）"
   },
   "cmdPlayPauseDescription": {
