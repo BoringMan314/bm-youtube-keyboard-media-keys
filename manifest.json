@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "description": "__MSG_extDescription__",
   "default_locale": "zh_TW",
+  "minimum_chrome_version": "92",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
@@ -34,21 +35,30 @@
   "commands": {
     "media-1-playpause": {
       "suggested_key": {
-        "default": "MediaPlayPause"
+        "default": "MediaPlayPause",
+        "mac": "MediaPlayPause",
+        "windows": "MediaPlayPause",
+        "linux": "MediaPlayPause"
       },
       "description": "__MSG_cmdPlayPauseDescription__",
       "global": true
     },
     "media-2-prev": {
       "suggested_key": {
-        "default": "MediaPrevTrack"
+        "default": "MediaPrevTrack",
+        "mac": "MediaPrevTrack",
+        "windows": "MediaPrevTrack",
+        "linux": "MediaPrevTrack"
       },
       "description": "__MSG_cmdPrevDescription__",
       "global": true
     },
     "media-3-next": {
       "suggested_key": {
-        "default": "MediaNextTrack"
+        "default": "MediaNextTrack",
+        "mac": "MediaNextTrack",
+        "windows": "MediaNextTrack",
+        "linux": "MediaNextTrack"
       },
       "description": "__MSG_cmdNextDescription__",
       "global": true
