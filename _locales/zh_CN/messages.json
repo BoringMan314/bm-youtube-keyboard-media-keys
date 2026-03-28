@@ -1,0 +1,126 @@
+{
+  "extName": {
+    "message": "[B.M] YouTube 支持鍵盤媒體鍵",
+    "description": "扩展名称（简体中文）"
+  },
+  "extDescription": {
+    "message": "将键盘上的播放/暂停、上一首、下一首映射至 YouTube 长视频、Shorts 与 YouTube Music；工具栏可开关。请至 chrome://extensions/shortcuts 确认快捷键为全局。",
+    "description": "扩展简介（简体中文）"
+  },
+  "cmdPlayPauseDescription": {
+    "message": "播放/暂停",
+    "description": "快捷键：播放暂停"
+  },
+  "cmdPrevDescription": {
+    "message": "上一首",
+    "description": "快捷键：上一首"
+  },
+  "cmdNextDescription": {
+    "message": "下一首",
+    "description": "快捷键：下一首"
+  },
+  "actionTitleEnabled": {
+    "message": "[B.M] YouTube 媒体键：已开启（点击可关闭）",
+    "description": "工具栏提示：已开启"
+  },
+  "actionTitleDisabled": {
+    "message": "[B.M] YouTube 媒体键：已关闭",
+    "description": "工具栏提示：已关闭"
+  },
+  "popupHeading": {
+    "message": "YouTube 媒体键",
+    "description": "弹出窗口标题"
+  },
+  "popupEnableLabel": {
+    "message": "启用媒体键映射",
+    "description": "弹出窗口开关标签"
+  },
+  "popupOpenHelp": {
+    "message": "说明与快捷键设置",
+    "description": "弹出窗口按钮"
+  },
+  "popupHintDisabled": {
+    "message": "关闭时，播放/暂停、上一首、下一首不会由本扩展处理。",
+    "description": "弹出窗口底部说明"
+  },
+  "optionsTitle": {
+    "message": "[B.M] YouTube 媒体键 — 说明",
+    "description": "选项页标题"
+  },
+  "optionsH1": {
+    "message": "[B.M] YouTube 支持鍵盤媒體鍵",
+    "description": "选项页主标题"
+  },
+  "optionsIntro": {
+    "message": "点击工具栏扩展图标可开关是否拦截媒体键；关闭时图标显示红色「×」。说明与快捷键仍可通过本页或弹出窗口中的按钮打开。",
+    "description": "选项页引言"
+  },
+  "optionsWarnStrong": {
+    "message": "Chrome 在后台时按键无反应：",
+    "description": "选项页警告粗体"
+  },
+  "optionsWarnRest": {
+    "message": "本扩展已在 manifest 为三个命令设置 global: true（即默认全局）。多数情况下快捷键页会显示「全局」；若仍为「仅限 Chrome」或快捷键空白，请改为「全局」并按下媒体键绑定。",
+    "description": "选项页警告正文"
+  },
+  "optionsH2Setup": {
+    "message": "快捷键与全局（建议确认）",
+    "description": "选项页二级标题"
+  },
+  "optionsSetup1": {
+    "message": "在地址栏打开 chrome://extensions/shortcuts",
+    "description": "设置步骤 1"
+  },
+  "optionsSetup2": {
+    "message": "确认本扩展下三个命令为「全局」（英文：Global）；已正确则无需更改。",
+    "description": "设置步骤 2"
+  },
+  "optionsSetup3": {
+    "message": "若快捷键显示「未指定」，请点击该栏再按下对应媒体键绑定。",
+    "description": "设置步骤 3"
+  },
+  "optionsH2Nav": {
+    "message": "上一首 / 下一首",
+    "description": "选项页：导航"
+  },
+  "optionsNavP1": {
+    "message": "若当前标签页为 Shorts、长视频或 YouTube Music，则控制该标签页。若都不是（例如其他网站），则控制最后播放中的 YouTube Music 标签（优先有声，否则最近使用）；若无 Music 标签则无操作。",
+    "description": "选项页：导航段落"
+  },
+  "optionsNavLi1": {
+    "message": "Shorts：上一则/下一则。当前为长视频时不会动后台 Shorts。",
+    "description": "选项页：列表项"
+  },
+  "optionsNavLi2": {
+    "message": "长视频（/watch、/live）：上一首为浏览器后退；下一首为 Shift+N。",
+    "description": "选项页：列表项"
+  },
+  "optionsNavLi3": {
+    "message": "YouTube Music：优先点击底部播放栏；失败时发送 Shift+N / Shift+P。未播过的歌单页会尝试从标题区或第一首开始播放。",
+    "description": "选项页：列表项"
+  },
+  "optionsH2Play": {
+    "message": "播放 / 暂停",
+    "description": "选项页：播放"
+  },
+  "optionsPlayP1": {
+    "message": "当前标签为长视频/Shorts/YouTube Music 时控制该页；否则优先最后播放中的 YouTube Music，再按有声/最近使用选择其他 YouTube 标签。",
+    "description": "选项页：播放段落"
+  },
+  "optionsH2Trouble": {
+    "message": "仍无效时可检查",
+    "description": "选项页：排查"
+  },
+  "optionsTrouble1": {
+    "message": "暂时停用其他也使用媒体键的扩展。",
+    "description": "排查 1"
+  },
+  "optionsTrouble2": {
+    "message": "将 Chrome 更新到最新稳定版。",
+    "description": "排查 2"
+  },
+  "optionsTrouble3": {
+    "message": "在 chrome://flags 搜索 hardware media key handling，保持默认（启用）后重启浏览器。",
+    "description": "排查 3"
+  }
+}
