@@ -1,3 +1,6 @@
 .DS_Store
 Thumbs.db
 *.zip
+
+# 個人自訂捷徑（保留本機、不納入版控）
+BoringMan314*.url
