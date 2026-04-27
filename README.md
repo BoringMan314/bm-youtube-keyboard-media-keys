@@ -57,7 +57,7 @@
 
 ### 從 Chrome 線上應用程式商店（建議）
 
-請在 [Chrome Web Store](https://chromewebstore.google.com/) 搜尋 **「[B.M] YouTube 支援鍵盤媒體鍵」**（[商店頁面](https://chromewebstore.google.com/detail/bm-youtube-%E6%94%AF%E6%8F%B4%E9%8D%B5%E7%9B%A4%E5%AA%92%E9%AB%94%E9%8D%B5/omadcnhemhgioppikilldhakofffpejm?hl=zh-TW)），或從上列直接連結安裝。
+請在 [Chrome Web Store](https://chromewebstore.google.com/) 搜尋 **「[\[B.M\] YouTube 支援鍵盤媒體鍵](https://chromewebstore.google.com/detail/bm-youtube-%E6%94%AF%E6%8F%B4%E9%8D%B5%E7%9B%A4%E5%AA%92%E9%AB%94%E9%8D%B5/omadcnhemhgioppikilldhakofffpejm?hl=zh-TW)」**，或點擊名稱從商店頁面安裝。
 
 ### 從原始碼載入（開發人員模式）
 
