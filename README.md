@@ -4,6 +4,7 @@
 [![Site](https://img.shields.io/badge/site-YouTube-FF0000?logo=youtube)](https://www.youtube.com)
 [![Music](https://img.shields.io/badge/YouTube_Music-music.youtube.com-FF0000)](https://music.youtube.com)
 [![GitHub](https://img.shields.io/badge/GitHub-bm--youtube--keyboard--media--keys-181717?logo=github)](https://github.com/BoringMan314/bm-youtube-keyboard-media-keys)
+[![GitHub all releases](https://img.shields.io/github/downloads/BoringMan314/bm-youtube-keyboard-media-keys/total)](https://github.com/BoringMan314/bm-youtube-keyboard-media-keys/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 適用於 [**YouTube**](https://www.youtube.com)（`youtube.com`）與 [**YouTube Music**](https://music.youtube.com)（`music.youtube.com`）的瀏覽器擴充功能：將鍵盤 **播放／暫停、上一首、下一首** 媒體鍵對應到 **Shorts**、一般長影片（`/watch`、`/live`）與 **YouTube Music**；可於工具列彈出面板 **開關** 是否攔截媒體鍵。
