@@ -20,7 +20,7 @@
     "description": "快捷键：上一首"
   },
   "extDescription": {
-    "message": "将键盘上的播放/暂停、上一首、下一首映射至 YouTube 长视频、Shorts 与 YouTube Music；工具栏可开关。请至 chrome://extensions/shortcuts 确认快捷键为全局。",
+    "message": "将键盘上的播放/暂停、上一首、下一首映射至 YouTube 长视频、Shorts 与 YouTube Music；工具栏可开关。请至 chrome://extensions/shortcuts 确认快捷键为通用。",
     "description": "扩展功能简介（简体中文）"
   },
   "extName": {
@@ -40,7 +40,7 @@
     "description": "选项页：播放"
   },
   "optionsH2Setup": {
-    "message": "快捷键与全局（建议确认）",
+    "message": "快捷键与通用（建议确认）",
     "description": "选项页二级标题"
   },
   "optionsH2Trouble": {
@@ -76,7 +76,7 @@
     "description": "设置步骤 1"
   },
   "optionsSetup2": {
-    "message": "确认本扩展下三个命令为「全局」（英文：Global）；已正确则无需更改。",
+    "message": "确认本扩展下三个命令为「通用」；已正确则无需更改。",
     "description": "设置步骤 2"
   },
   "optionsSetup3": {
@@ -100,7 +100,7 @@
     "description": "排查 3"
   },
   "optionsWarnRest": {
-    "message": "本扩展已在 manifest 为三个命令设置 global: true（即默认全局）。多数情况下快捷键页会显示「全局」；若仍为「仅限 Chrome」或快捷键空白，请改为「全局」并按下媒体键绑定。",
+    "message": "本扩展已在 manifest 为三个命令设置 global: true（即默认通用）。多数情况下快捷键页会显示「通用」；若仍为「在 Chrome 中」或快捷键空白，请改为「通用」并按下媒体键绑定。",
     "description": "选项页警告正文"
   },
   "optionsWarnStrong": {
