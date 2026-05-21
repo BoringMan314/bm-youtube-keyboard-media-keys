@@ -1,4 +1,21 @@
 const STORAGE_ENABLED_KEY = 'mediaKeysEnabled';
+const STORAGE_SAVED_SHORTCUTS_KEY = 'savedCommandShortcuts';
+
+const MEDIA_COMMAND_NAMES = ['media-1-playpause', 'media-2-prev', 'media-3-next'];
+
+const DEFAULT_COMMAND_SHORTCUTS = {
+	'media-1-playpause': 'MediaPlayPause',
+	'media-2-prev': 'MediaPrevTrack',
+	'media-3-next': 'MediaNextTrack',
+};
+
+const DISABLED_COMMAND_SHORTCUTS = {
+	'media-1-playpause': 'Ctrl+Shift+0',
+	'media-2-prev': 'Ctrl+Shift+8',
+	'media-3-next': 'Ctrl+Shift+9',
+};
+
+const MEDIA_KEY_SHORTCUTS = new Set(Object.values(DEFAULT_COMMAND_SHORTCUTS));
 
 let mediaKeysEnabledCache = true;
 let mediaKeysCacheInitialized = false;
@@ -17,6 +34,94 @@ async function syncMediaKeysEnabledFromStorage() {
 async function isMediaKeysEnabled() {
 	if (!mediaKeysCacheInitialized) await syncMediaKeysEnabledFromStorage();
 	return mediaKeysEnabledCache;
+}
+
+async function getMediaCommandShortcuts() {
+	const commands = await chrome.commands.getAll();
+	const shortcuts = {};
+	for (const cmd of commands) {
+		if (MEDIA_COMMAND_NAMES.includes(cmd.name)) {
+			shortcuts[cmd.name] = cmd.shortcut || '';
+		}
+	}
+	return shortcuts;
+}
+
+async function updateMediaCommandShortcut(name, shortcut) {
+	return new Promise((resolve, reject) => {
+		chrome.commands.update(name, { shortcut: shortcut ?? '' }, () => {
+			const err = chrome.runtime.lastError;
+			if (err) reject(new Error(err.message));
+			else resolve();
+		});
+	});
+}
+
+async function updateMediaCommandShortcuts(shortcutsByName) {
+	for (const name of MEDIA_COMMAND_NAMES) {
+		if (!(name in shortcutsByName)) continue;
+		try {
+			await updateMediaCommandShortcut(name, shortcutsByName[name]);
+		} catch {}
+	}
+}
+
+async function loadSavedCommandShortcuts() {
+	const data = await chrome.storage.local.get(STORAGE_SAVED_SHORTCUTS_KEY);
+	return data[STORAGE_SAVED_SHORTCUTS_KEY] || null;
+}
+
+function resolveCommandShortcutsToRestore(saved) {
+	const restored = { ...DEFAULT_COMMAND_SHORTCUTS };
+	if (!saved || typeof saved !== 'object') return restored;
+	for (const name of MEDIA_COMMAND_NAMES) {
+		if (saved[name]) restored[name] = saved[name];
+	}
+	return restored;
+}
+
+function isMediaKeyBound(shortcut) {
+	return MEDIA_KEY_SHORTCUTS.has(shortcut);
+}
+
+function isDisabledPlaceholder(shortcut) {
+	return Object.values(DISABLED_COMMAND_SHORTCUTS).includes(shortcut);
+}
+
+async function syncCommandShortcuts(enabled) {
+	if (enabled) {
+		const saved = await loadSavedCommandShortcuts();
+		if (saved) {
+			await updateMediaCommandShortcuts(resolveCommandShortcutsToRestore(saved));
+			return;
+		}
+
+		const current = await getMediaCommandShortcuts();
+		const needsDefault = MEDIA_COMMAND_NAMES.some(
+			(name) => !current[name] || isDisabledPlaceholder(current[name])
+		);
+		if (!needsDefault) return;
+
+		await updateMediaCommandShortcuts(DEFAULT_COMMAND_SHORTCUTS);
+		return;
+	}
+
+	const current = await getMediaCommandShortcuts();
+	if (MEDIA_COMMAND_NAMES.some((name) => isMediaKeyBound(current[name]))) {
+		await chrome.storage.local.set({ [STORAGE_SAVED_SHORTCUTS_KEY]: current });
+	}
+
+	for (const name of MEDIA_COMMAND_NAMES) {
+		if (isMediaKeyBound(current[name])) {
+			await updateMediaCommandShortcut(name, DISABLED_COMMAND_SHORTCUTS[name]);
+		}
+	}
+}
+
+async function applyMediaKeysEnabledState(enabled) {
+	applyMediaKeysEnabledFromStorageValue(enabled);
+	await syncCommandShortcuts(mediaKeysEnabledCache);
+	await refreshActionBadge();
 }
 
 async function refreshActionBadge() {
@@ -40,6 +145,8 @@ chrome.runtime.onInstalled.addListener((details) => {
 			if (details.reason === chrome.runtime.OnInstalledReason.INSTALL) {
 				await chrome.storage.local.set({ [STORAGE_ENABLED_KEY]: true });
 			}
+			await syncMediaKeysEnabledFromStorage();
+			await syncCommandShortcuts(await isMediaKeysEnabled());
 			await refreshActionBadge();
 		} catch {}
 	})();
@@ -47,21 +154,21 @@ chrome.runtime.onInstalled.addListener((details) => {
 
 chrome.storage.onChanged.addListener((changes, area) => {
 	if (area === 'local' && changes[STORAGE_ENABLED_KEY]) {
-		applyMediaKeysEnabledFromStorageValue(changes[STORAGE_ENABLED_KEY].newValue);
-		void refreshActionBadge().catch(() => {});
+		void applyMediaKeysEnabledState(changes[STORAGE_ENABLED_KEY].newValue).catch(() => {});
 	}
 });
 
 chrome.runtime.onMessage.addListener((msg) => {
 	if (msg?.type === 'mediaKeysEnabledSync' && typeof msg.enabled === 'boolean') {
-		mediaKeysEnabledCache = msg.enabled;
-		mediaKeysCacheInitialized = true;
-		void refreshActionBadge().catch(() => {});
+		return applyMediaKeysEnabledState(msg.enabled);
 	}
 });
 
 void syncMediaKeysEnabledFromStorage()
-	.then(() => refreshActionBadge())
+	.then(async () => {
+		await syncCommandShortcuts(await isMediaKeysEnabled());
+		await refreshActionBadge();
+	})
 	.catch(() => {});
 
 const YOUTUBE_URL_PATTERNS = [
@@ -213,7 +320,10 @@ async function resolveYoutubeTabId(hintTab) {
 }
 
 chrome.commands.onCommand.addListener(async (command, tab) => {
-	if (!(await isMediaKeysEnabled())) return;
+	if (!(await isMediaKeysEnabled())) {
+		void syncCommandShortcuts(false).catch(() => {});
+		return;
+	}
 
 	if (command === 'media-1-playpause') {
 		const tabId = await resolveYoutubeTabId(tab);

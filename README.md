@@ -43,7 +43,7 @@
 - **Shorts**：媒體「上一首／下一首」切換短影片；留言面板開啟時會先嘗試關閉再導覽。
 - **長影片**：上一首為瀏覽器 **上一頁**（`history.back()`）；下一首模擬 **Shift+N**。
 - **YouTube Music**：操作播放列；歌單頁尚未播放時優先從標題區或第一首開始；非 YouTube 前景分頁時可優先控制最近使用的 Music 分頁。
-- **全域快捷鍵**：[`manifest.json`](manifest.json) 內三個 `commands` 皆已設 `"global": true`（Chrome 只能逐條指令宣告，沒有「一次全部」的單一欄位）。安裝後請到 `chrome://extensions/shortcuts` **確認**皆為 **全域**；若仍顯示「僅限 Chrome」再手動改，並綁定媒體鍵。
+- **通用快捷鍵**：[`manifest.json`](manifest.json) 內三個 `commands` 皆已設 `"global": true`（Chrome 只能逐條指令宣告，沒有「一次全部」的單一欄位）。安裝後請到 `chrome://extensions/shortcuts` **確認**皆為 **通用**；若仍顯示「在 Chrome 中」再手動改，並綁定媒體鍵。
 - **開關**：關閉時不處理媒體鍵，工具列圖示顯示 **×**。
 
 ---
@@ -65,7 +65,7 @@
 1. 點選本頁綠色 **Code** → **Download ZIP** 解壓，或執行 `git clone https://github.com/BoringMan314/bm-youtube-keyboard-media-keys.git` 複製本倉庫。
 2. 以 **Chrome** 或 **Microsoft Edge** 開啟 `chrome://extensions`（在 Edge 為 `edge://extensions`）。
 3. 開啟「**開發人員模式**」→「**載入未封裝項目**」→ 選取含 [`manifest.json`](manifest.json) 的**專案根目錄**（勿選子資料夾）。
-4. 開啟 `chrome://extensions/shortcuts`，**確認**本擴充三個指令為 **全域**（`manifest` 已預設 `global: true`，多數情況無須改）；必要時改為全域並綁定媒體鍵。
+4. 開啟 `chrome://extensions/shortcuts`，**確認**本擴充三個指令為 **通用**（`manifest` 已預設 `global: true`，多數情況無須改）；必要時改為通用並綁定媒體鍵。
 
 ---
 
