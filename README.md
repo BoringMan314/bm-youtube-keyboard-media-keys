@@ -93,7 +93,7 @@
 | [`background.js`](background.js) | 指令處理、分頁挑選、注入腳本、badge／`storage` 開關 |
 | [`popup.html`](popup.html)／[`popup.js`](popup.js) | 工具列彈出面板：開關與開啟說明頁 |
 | [`options.html`](options.html)／[`options.js`](options.js) | 完整說明（多語系字串套用） |
-| [`_locales/`](_locales/) | 多語系字串（`zh_TW`、`zh_CN`、`ja_JP`、`en_US`） |
+| [`_locales/`](_locales/) | 多語系字串（`zh_TW`、`zh_CN`、`ja`、`en_US`） |
 | [`privacy-policy.html`](privacy-policy.html) | 隱私權政策（上架商店所需之公開網頁） |
 | [`icons/`](icons/) | 工具列與商店用圖示：icon.png |
 | [`screenshot/`](screenshot/) | 商店與說明用截圖 |
@@ -104,7 +104,7 @@
 
 - **版本**：以 [`manifest.json`](manifest.json) 的 `version` 為準。
 - **預設語系**：`zh_TW`（`default_locale`）。
-- **內建語系**：`zh_TW`、`zh_CN`、`ja_JP`、`en_US`（路徑為 `_locales/<code>/messages.json`）。實際顯示依瀏覽器語系與遞減規則。
+- **內建語系**：`zh_TW`、`zh_CN`、`ja`、`en_US`（路徑為 `_locales/<code>/messages.json`）。實際顯示依瀏覽器語系與遞減規則。
 
 ---
 
